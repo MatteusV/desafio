@@ -1,5 +1,5 @@
-import { zipCode } from '@/lib/zipCode-api'
-import { number, z } from 'zod'
+import { apiZipCode } from '@/lib/zipCode-api'
+import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
@@ -38,12 +38,18 @@ export function ZipCode() {
     resolver: zodResolver(formZipCodeSchema),
   })
 
-  const [ceps, setCeps] = useState<Array<ResponseZipCode>>([])
+  const [zipCode, setZipCode] = useState<Array<ResponseZipCode>>([])
+  const [noZipCodeFound, setNoZipCodeFound] = useState(false)
 
   async function handleSearchZipCode(data: FormZipCodeData) {
     console.log(data)
-    const res = await zipCode(`/${data.state}/${data.city}/${data.street}/json`)
-    setCeps(res.data)
+    const res = await apiZipCode(
+      `/${data.state}/${data.city}/${data.street}/json`,
+    )
+    if (res.data.length === 0) {
+      setNoZipCodeFound(true)
+    }
+    setZipCode(res.data)
   }
   return (
     <>
@@ -52,7 +58,7 @@ export function ZipCode() {
           onSubmit={handleSubmit(handleSearchZipCode)}
           className="flex flex-col gap-2"
         >
-          <label htmlFor="ceps" className="">
+          <label htmlFor="zipCode" className="">
             Não sabe seu CEP?
           </label>
           <div className="flex gap-4 ">
@@ -100,22 +106,30 @@ export function ZipCode() {
 
       <div className="bg-slate-600 rounded-3xl p-5">
         <h1 className="mb-4 text-2xl font-semibold">
-          Ceps disponivel nesse endereço:
+          Ceps disponíveis nesse endereço:
         </h1>
-        {ceps.length > 0 && (
+        {zipCode.length > 0 && (
           <div className="bg-slate-600">
             <ul className="grid  grid-cols-5 gap-2">
-              {ceps.map((cep) => (
-                <li className="p-2 border border-white" key={cep.cep}>
-                  CEP: {cep.cep}
+              {zipCode.map((cep) => (
+                <li
+                  className="p-2 border border-white text-slate-300"
+                  key={cep.cep}
+                >
+                  <span className="text-white">CEP:</span> {cep.cep}
                 </li>
               ))}
             </ul>
           </div>
         )}
-        {ceps.length === 0 && (
+        {zipCode.length === 0 && (
           <h1 className="text-red-500 text-lg font-semibold">
-            Informe o endereço corretamente
+            {noZipCodeFound === true && (
+              <h1>Não foi possivel achar nenhum cep nesse endereço</h1>
+            )}
+            {zipCode.length === 0 && noZipCodeFound === false && (
+              <h1>Insira um endereço</h1>
+            )}
           </h1>
         )}
       </div>

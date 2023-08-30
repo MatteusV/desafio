@@ -23,7 +23,7 @@ export interface CoordsProps {
 export default function CurrentCity({ informations }: CoordsProps) {
   const router = useRouter()
   return (
-    <div className="w-screen h-auto flex bg-slate-950 px-4 py-2 text-white">
+    <div className="w-screen h-auto flex bg-slate-900 px-4 py-2 text-white">
       <aside className="flex flex-col items-center gap-16 px-4 py-4 w-fit h-[calc(100vh-0.5rem)] bg-slate-600 rounded-xl">
         <button
           onClick={async () => {
@@ -47,7 +47,10 @@ export default function CurrentCity({ informations }: CoordsProps) {
           <a className="flex flex-col text-lg text-slate-200 font-semibold hover:text-white hover:cursor-pointer hover:underline">
             Weather
           </a>
-          <a className="flex flex-col text-lg text-slate-200 font-semibold hover:text-white hover:cursor-pointer hover:underline">
+          <a
+            href="/contact"
+            className="flex flex-col text-lg text-slate-200 font-semibold hover:text-white hover:cursor-pointer hover:underline"
+          >
             Contato
           </a>
         </nav>

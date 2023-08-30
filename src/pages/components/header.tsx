@@ -3,7 +3,7 @@ import { DecidedWhichImage } from './decidedWhichImage'
 
 export function Header({ informations }: CoordsProps) {
   return (
-    <header className="flex gap-16 w-3/6 bg-slate-600 p-5 rounded-3xl">
+    <header className="flex gap-16 w-3/6 2xl:w-[40rem] justify-between bg-slate-600 p-8 rounded-3xl">
       <div className="flex flex-col gap-6">
         <div>
           <h1 className="text-3xl font-semibold">{informations.city_name}</h1>
@@ -13,6 +13,14 @@ export function Header({ informations }: CoordsProps) {
               {informations.rain}
               <span className="text-xs">mm</span>
             </span>
+          </p>
+          <p className="text-slate-300">
+            Velocidade do vento:{' '}
+            <span className="text-lg">{informations.wind_speedy}</span>
+          </p>
+          <p className="text-slate-300">
+            Direção do vento:{' '}
+            <span className="text-lg">{informations.wind_direction}°</span>
           </p>
         </div>
         <p className="text-4xl font-semibold">{informations.temp}°</p>

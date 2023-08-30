@@ -1,38 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Maior dificuldade:
 
-## Getting Started
+A minha maior dificuldade foi criar um design
 
-First, run the development server:
+## Funcionalidades e bibliotecas usadas:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+para formatar o código e deixa-lo mais bonito eu usei o eslint, usei a configuração da Rocketseat, é uma configuração que eu acho muito boa
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+para envio dos dados do formulário eu usei o react-hook-form, é uma biblioteca muito usada pela galera e com uma documentação muito boa
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+para tipagem do conteudo do formulário e do arquivo .env eu usei o zod, já que ele tem uma integração muito boa com react-hook-form usando o hookform/resolver.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+usei o axios para fazer chamadas nas APIs, escolhi ela por ser bem simples e muito usada
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+para a estilização dá pagina eu usei o Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Como me vejo daqui a 5 anos:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Me vejo muito bem inserido no mercado, buscando cada vez mais conhecimento tanto em hard skills quanto em soft skills pensando em subir para pleno
