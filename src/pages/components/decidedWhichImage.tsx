@@ -5,7 +5,7 @@ import sun from '@/assets/sun.png'
 import cloudSunWithRain from '@/assets/cloud-sun-with-rain.png'
 import cloudWithRain from '@/assets/cloud-with-rain.png'
 import cloud from '@/assets/cloud.png'
-import { CoordsProps } from '../[...coords]'
+import { CoordsProps } from '@/types/coordsProps'
 
 export function DecidedWhichImage({ informations }: CoordsProps) {
   return (

@@ -1,4 +1,4 @@
-import { CoordsProps } from '../currentCity/[...coords]'
+import { CoordsProps } from '@/types/coordsProps'
 import { DecidedWhichImage } from './decidedWhichImage'
 
 export function Header({ informations }: CoordsProps) {

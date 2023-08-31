@@ -7,18 +7,7 @@ import { useRouter } from 'next/router'
 import umbrela from '@/assets/umbrela.png'
 import { Header } from '../components/header'
 import { ZipCode } from '../components/zipCode'
-
-export interface CoordsProps {
-  informations: {
-    temp: number
-    date: Date
-    humidity: number
-    rain: number
-    wind_speedy: number
-    wind_direction: number
-    city_name: string
-  }
-}
+import { CoordsProps } from '@/types/coordsProps'
 
 export default function CurrentCity({ informations }: CoordsProps) {
   const router = useRouter()
