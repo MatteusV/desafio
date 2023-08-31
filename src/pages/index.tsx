@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { ContainerBanner } from './components/containerWithBanner'
+import ContainerBanner from '../components/containerWithBanner'
 import Image from 'next/image'
 
 import umbrela from '@/assets/umbrela.png'

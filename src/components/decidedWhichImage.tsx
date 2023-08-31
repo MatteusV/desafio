@@ -7,7 +7,7 @@ import cloudWithRain from '@/assets/cloud-with-rain.png'
 import cloud from '@/assets/cloud.png'
 import { CoordsProps } from '@/types/coordsProps'
 
-export function DecidedWhichImage({ informations }: CoordsProps) {
+export default function DecidedWhichImage({ informations }: CoordsProps) {
   return (
     <div className="pt-5">
       {informations.temp < 25 && informations.rain > 2 && (

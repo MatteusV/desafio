@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import { ContainerBanner } from '../components/containerWithBanner'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import ContainerBanner from '../../components/containerWithBanner'
 
 const formContactSchema = z.object({
   name: z.string().min(4),

@@ -29,7 +29,7 @@ interface ResponseZipCode {
   siafi: string
 }
 
-export function ZipCode() {
+export default function ZipCode() {
   const {
     register,
     handleSubmit,

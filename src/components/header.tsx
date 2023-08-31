@@ -1,7 +1,7 @@
 import { CoordsProps } from '@/types/coordsProps'
-import { DecidedWhichImage } from './decidedWhichImage'
+import DecidedWhichImage from './decidedWhichImage'
 
-export function Header({ informations }: CoordsProps) {
+export default function Header({ informations }: CoordsProps) {
   return (
     <header className="flex gap-16 w-3/6 2xl:w-[40rem] justify-between bg-slate-600 p-8 rounded-3xl">
       <div className="flex flex-col gap-6">

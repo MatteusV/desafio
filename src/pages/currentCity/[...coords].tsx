@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import umbrela from '@/assets/umbrela.png'
-import { Header } from '../components/header'
-import { ZipCode } from '../components/zipCode'
 import { CoordsProps } from '@/types/coordsProps'
+import Header from '../../components/header'
+import ZipCode from '../../components/zipCode'
 
 export default function CurrentCity({ informations }: CoordsProps) {
   const router = useRouter()
@@ -60,11 +60,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const coords = params!.coords
+  const coords = params?.coords
   const response = await weather(
-    `?key=${env.API_KEY_HG}&lat=${coords![0]}&lon=${
-      coords![1]
-    }&user_ip=remote&fields=only_results,temp,city_name,date,rain,humidity,wind_speedy,wind_direction`,
+    `?key=${env.API_KEY_HG}&lat=${coords?.[0]}&lon=${coords?.[1]}&user_ip=remote&fields=only_results,temp,city_name,date,rain,humidity,wind_speedy,wind_direction`,
   )
   const informations = response.data
 
