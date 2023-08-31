@@ -53,7 +53,7 @@ export default function ZipCode() {
   }
   return (
     <>
-      <div className="bg-slate-600 p-5 pr-5 rounded-3xl w-[45rem]">
+      <div className="bg-slate-600 p-5 pr-5 rounded-3xl 2xl:w-1/2 xl:w-[50rem]">
         <form
           onSubmit={handleSubmit(handleSearchZipCode)}
           className="flex flex-col gap-2"
